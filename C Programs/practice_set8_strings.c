@@ -184,24 +184,18 @@
 //starcmp() - used to comapre two string .It gives 1 or -1 based on (asc value of  char string1 - asc value of char string2).
 //it return 0 if strings are equal.
 
-#include<stdio.h>
-#include<string.h>
+// #include<stdio.h>
+// #include<string.h>
 
-int main(){
-    char st1[45] = "Saket";
-    char *st2 = "Suman";
-    // char st1[45] = "Suman";
-    // char *st2 = "Saket";
-    int val = strcmp(st1, st2);
-    printf("Now the val is %d", val);
-    return 0;
-} 
-
-
-
-
-
-
+// int main(){
+//     char st1[45] = "Saket";
+//     char *st2 = "Suman";
+//     // char st1[45] = "Suman";
+//     // char *st2 = "Saket";
+//     int val = strcmp(st1, st2);
+//     printf("Now the val is %d", val);
+//     return 0;
+// } 
 
 
 
@@ -212,9 +206,148 @@ int main(){
 
 //Program to take  string as input  from User using %c and %s and cjeck whther they are equal or not
 
-#include <stdio.h>
+// #include<stdio.h>
+// #include<string.h>
 
-int main (){
+// int main(){
+//     char st1[34];
+//     char st2[34];
+//     char c;
+//     int i =0;
+
+//     printf("Enter the value of first string\n");
+//     scanf("%s", st1); 
+//     printf("Enter the value of second string character by character\n");
     
+//     while(c!='\n'){ 
+//         fflush(stdin);
+//         scanf("%c", &c); 
+//         st2[i] = c;
+//         i++;
+//     }
+//     st2[i-1]= '\0';
+
+//     printf("The value of st1 is %s\n", st1);
+//     printf("The value of st2 is %s\n", st2);
+//     printf("strcmp for these strings returns %d\n", strcmp(st1, st2));
+
+//     return 0;
+// }
+
+
+
+//<------------------------------------------------------------------------------------------>
+
+//Write your own version of  strlen function from <string.h>
+
+
+// #include<stdio.h>
+// int strlen(char * st){
+//     char *ptr = st;
+//     int len=0;
+//     while(*ptr!='\0'){
+//         len++;
+//         ptr++;
+//     }
+//     return len;
+// }
+
+// int main(){
+//     char st[] = "saket";
+//     int l = strlen(st);
+//     printf("The length of this string is %d", l);
+//     return 0;
+// }
+
+
+
+
+//<----------------------------------------------------------------------------------------------------->
+
+// #include<stdio.h>
+// void slice(char *st, int m, int n){
+//     int i = 0;
+//      while((m+i)<n){
+//          st[i] = st[i+m];
+//          i++;
+//      }
+//      st[i] = '\0';
+// }
+
+// int main(){
+//     char st[] = "saketsuman";
+//     slice(st, 1, 6);
+//     printf("%s", st);
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+//<----------------------------------------------------------------------------------------------------->
+
+//C program to encrypt a string
+
+// #include<stdio.h>
+// void encrypt(char *c){
+//     char *ptr = c;
+//     while(*ptr!='\0'){
+//         *ptr = *ptr + 1; 
+//         ptr++;
+//     }
+// }
+
+// int main(){
+//     char c[] = "come to this room";
+//     encrypt(c);
+//     printf("Encrypted string is: %s", c);
+//     return 0;
+// }
+
+
+//<----------------------------------------------------------------------------------------------------->
+
+//C Program to decrypt a String
+
+// #include<stdio.h>
+// void decrypt(char *c){
+//     char *ptr = c;
+//     while(*ptr!='\0'){
+//         *ptr = *ptr - 1; 
+//         ptr++;
+//     }
+// }
+
+// int main(){
+//     char c[] = "dpnf!up!uijt!sppn";
+//     decrypt(c);
+//     printf("Encrypted string is: %s", c);
+//     return 0;
+// }
+//<----------------------------------------------------------------------------------------------------->
+
+//Program to count the ocurence of given character in a string 
+
+#include<stdio.h>
+int occurence(char st[], char c){
+    char *ptr = st;
+    int count=0;
+    while(*ptr!='\0'){
+        if (*ptr==c){
+            count++;
+        }
+        ptr++;
+    }
+    return count;
+}
+int main(){
+    char st[] = "Harry7777";
+    int count = occurence(st, '7');
+    printf("Occurences = %d", count);
     return 0;
 }
+//<----------------------------------------------------------------------------------------------------->
