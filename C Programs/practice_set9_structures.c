@@ -197,42 +197,42 @@ Use the struture decalred above
 
 
  
-//typedef keyword - used to make alias name for custom data type
+// //typedef keyword - used to make alias name for custom data type
 
 
-#include<stdio.h>
-#include<string.h>
+// #include<stdio.h>
+// #include<string.h>
 
-typedef struct employee{
-    int code;
-    float salary;
-    char name[20];
-} emp;
+// typedef struct employee{
+//     int code;
+//     float salary;
+//     char name[20];
+// } emp;
 
-void show(emp emp1){
-    printf("The Code of employee is: %d\n", emp1.code);
-    printf("The Salary of employee is: %f\n", emp1.salary);
-    printf("The Name of employee is: %s\n", emp1.name);
+// void show(emp emp1){
+//     printf("The Code of employee is: %d\n", emp1.code);
+//     printf("The Salary of employee is: %f\n", emp1.salary);
+//     printf("The Name of employee is: %s\n", emp1.name);
     
-}
+// }
 
-int main(){
-    // Declaring e1 and ptr
-    emp e1;
-    emp *ptr;
+// int main(){
+//     // Declaring e1 and ptr
+//     emp e1;
+//     emp *ptr;
 
-    // pointing ptr to e1
-    ptr = &e1; 
+//     // pointing ptr to e1
+//     ptr = &e1; 
 
-    // Set the member values for e1
-    ptr->code = 101;
-    ptr->salary = 11.01;
-    strcpy(ptr->name, "Harry"); 
+//     // Set the member values for e1
+//     ptr->code = 101;
+//     ptr->salary = 11.01;
+//     strcpy(ptr->name, "Harry"); 
 
-    show(e1);
+//     show(e1);
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 
@@ -242,3 +242,180 @@ int main(){
 
 
 //<--------------------------------------------------------------------Question-Set--------------------------------------------------------------->
+
+/*Write a 2-d Vector using Structure */
+
+// #include<stdio.h>
+
+// struct vector{
+//     int x;
+//     int y;
+// };
+
+// int main(){
+//     struct vector v1, v2;
+//     v1.x = 34;
+//     v1.y = 54;
+//     printf("X dim is %d and Y dim is %d\n", v1.x, v1.y);
+
+//     v2.x = 3345;
+//     v2.y = 534;
+//     printf("X dim is %d and Y dim is %d\n", v2.x, v2.y);
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+/*Writ a function sumVector which return the sum of tw vectors passed to it
+the vector must be 2-D.
+*/
+
+
+// #include<stdio.h>
+
+// struct vector{
+//     int x;
+//     int y;
+// };
+
+// struct vector sumVector(struct vector v1, struct vector v2){
+//     struct vector result;
+//     result.x = v1.x + v2.x;
+//     result.y = v1.y + v2.y;
+//     return result;
+// }
+// int main(){
+//     struct vector v1, v2, sum;
+//     v1.x = 4;
+//     v1.y = 9;
+//     printf("X dim is %d and Y dim is %d\n", v1.x, v1.y);
+
+//     v2.x = 5;
+//     v2.y = 4;
+//     printf("X dim is %d and Y dim is %d\n", v2.x, v2.y);
+
+//     sum = sumVector(v1, v2);
+//     printf("X dim of result is %d and Y dim is %d\n", sum.x, sum.y);
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
+/*
+Create an array of 5 compex numbers created in above Question and diplay them with the help ofa display function.
+The value must be taken as an input from the user
+*/
+
+// #include<stdio.h>
+
+// typedef struct complex{
+//     int real;
+//     int complex;
+// }comp;
+
+// void display(comp c){
+//     printf("The value of real part is %d\n", c.real);
+//     printf("The value of Imaginary part is %d\n", c.complex);
+// }
+
+// int main(){
+//     comp cnums[5];
+//     for(int i=0; i<5; i++){
+//         printf("Enter the real value for %d num\n", i+1);
+//         scanf("%d", &cnums[i].real);
+
+//         printf("Enter the complex value for %d num\n", i+1);
+//         scanf("%d", &cnums[i].complex);
+//     }
+//     for(int i=0; i<5; i++){
+//         display(cnums[i]);
+//     }
+//     return 0;
+// }
+
+
+
+/*
+Write a structure capable of storing date.
+Write a function to compare those dates.
+*/
+
+
+#include<stdio.h>
+
+typedef struct date{
+    int date;
+    int month;
+    int year;
+}date;
+
+void display(date d){
+    printf("The date is: %d/%d/%d\n", d.date, d.month, d.year);
+}
+
+int dateCmp(date d1, date d2){
+    // Make decision on the basis of Year comparison
+    if(d1.year>d2.year){
+        return 1;
+    }
+    if(d1.year<d2.year){
+        return -1;
+    }
+
+    // Make decision on the basis of Month comparison
+    if(d1.month>d2.month){
+        return 1;
+    }
+    if(d1.month<d2.month) {
+        return -1;
+    }
+
+    // Make decision on the basis of Date comparison
+    if(d1.date>d2.date){
+        return 1;
+    }
+    if(d1.date<d2.date) {
+        return -1;
+    }
+    return 0;
+}
+int main(){
+    date d1 = {5, 11, 31};
+    date d2 = {5, 10, 31};
+    display(d1);
+    display(d2);
+    int a = dateCmp(d1, d2);
+    printf("Date Comparison function returns: %d", a);
+
+    return 0;
+}
+
+
+
+
+/*
+Now,writing the same above problem usung typedef keyword
+*/
+
+
+
+
+
+/*
+Real coder-
+Write  a program for timestamp  with everything
+*/
